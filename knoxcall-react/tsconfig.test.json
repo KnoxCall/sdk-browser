@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    // Type-resolve the workspace peer against its source so typechecking
+    // does not require a prior `@knoxcall/browser` build (mirrors the
+    // resolve.alias in vitest.config.ts).
+    "paths": {
+      "@knoxcall/browser": ["../knoxcall-browser/src/index.ts"]
+    }
+  },
+  "include": ["src", "test"]
+}

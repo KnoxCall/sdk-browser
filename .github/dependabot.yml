@@ -1,0 +1,19 @@
+# Dependabot for the public mirror KnoxCall/sdk-browser. This folder is copied to
+# that repository's root by .github/workflows/mirror-sdk-browser.yml in the
+# KnoxCall monorepo, where GitHub reads it; the two packages land beside it as
+# knoxcall-browser/ and knoxcall-react/. It has no effect inside the monorepo;
+# there, the root .github/dependabot.yml and sdk-ci's dependency audit cover
+# these SDKs. One entry per package folder the workflow's PACKAGES names.
+# Pinned by tests/coverage/sdk-security-policy-coverage.test.ts.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/knoxcall-browser"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/knoxcall-react"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
